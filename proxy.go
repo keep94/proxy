@@ -75,19 +75,21 @@ func (e evesdropLogger) Log(w io.Writer, log *weblogs.LogRecord) {
 		s.Proto,
 		c.Status(),
 		c.Size())
-	fmt.Fprintln(w, "Header:")
-	s.Header.Write(w)
+	// fmt.Fprintln(w, "Header:")
+	// s.Header.Write(w)
 	if len(s.Body) > 0 {
 		fmt.Fprintln(w, "Body:")
 		fmt.Fprintf(w, "%s\n", string(s.Body))
 	}
-	fmt.Fprintln(w, "Response header: ")
-	c.recorder.HeaderMap.Write(w)
-	responseBody := c.recorder.Body.Bytes()
-	if len(responseBody) > 0 {
-		fmt.Fprintln(w, "Response body:")
-		fmt.Fprintf(w, "%s\n", string(responseBody))
-	}
+	// fmt.Fprintln(w)
+	// fmt.Fprintln(w, "Response header: ")
+	// c.recorder.HeaderMap.Write(w)
+	// responseBody := c.recorder.Body.Bytes()
+	// if len(responseBody) > 0 {
+	//	fmt.Fprintln(w, "Response body:")
+	// 	fmt.Fprintf(w, "%s\n", string(responseBody))
+	// }
+	fmt.Fprintln(w, "====================================================")
 }
 
 func main() {
